@@ -35,7 +35,7 @@ function addCardDiv(toy){
 
   let toyImage = document.createElement('img')
   toyImage.src = toy.image
-  toyImage.setAttribute('class', 'toy-avatar')  
+  toyImage.setAttribute('class', 'toy-avatar')
   newDiv.appendChild(toyImage)
 
   let toyP = document.createElement('p')
@@ -49,7 +49,7 @@ function addCardDiv(toy){
   toyBtn.addEventListener('click', function(e) {
     addLike(toy)
   }) //trigger the listener for the like button
-  
+
 }
 
 function createToys() {
@@ -80,7 +80,7 @@ function submitData(toyName, toyImageURL){
     return response.json();
     })
     .then(function(object) {
-      return addCardDiv(object); 
+      return addCardDiv(object);
     })
     .catch(function(error) {
     alert(error.message);
@@ -96,7 +96,7 @@ form.addEventListener('submit', function(event) {
     form.reset();
 });
 
-// add selector for all 'Like' buttons and an event listener to click them. return content to figure out how to add that particular toy's like 
+// add selector for all 'Like' buttons and an event listener to click them. return content to figure out how to add that particular toy's like
 function addLike(toy) {
   let configObj = {
     method: "PATCH",
